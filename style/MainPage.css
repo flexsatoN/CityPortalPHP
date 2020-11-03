@@ -1,0 +1,36 @@
+.background {
+    background-image: url(../images/DSC_4561.jpg);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+  }
+
+
+
+.blur {
+	background: rgba(255, 255, 255, 0.2); 
+	backdrop-filter: blur(8px);
+	height: 100vh;
+  width: 100%;
+  
+}
+
+.outerPase {
+  height: 100%;
+  display: flex;
+  justify-content: top;
+  flex-direction: column;
+
+  
+}
+
+.innerPase{
+  text-align: center;
+  margin: 50 50 auto 50  ;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 15 ;
+  border-radius: 20px;
+  
+}

@@ -1,0 +1,40 @@
+input,button{
+    height: 50px;
+    width: 160px;
+    margin-left: 15px;
+    margin-top: 15px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid aliceblue;
+    border-radius: 8px;
+    text-align: center;
+    color:  aliceblue;
+}
+
+input:hover{
+    transition: 1s;
+    background-color: aliceblue;
+}
+
+input::placeholder{
+    color:  aliceblue;
+
+}
+
+input:hover::placeholder{
+    color:  black;
+}
+
+input:focus::placeholder{
+    color:  black;
+}
+
+button,input:focus{
+    background-color: aliceblue;
+    color:  black;
+}
+
+button:hover{
+    transition: 1s;
+    background-color: cadetblue;
+
+}
