@@ -1,15 +1,18 @@
 <?php
 interface connectToMySQL{
-    public function getConnect() ;
+    public static function getConnect() ;
+    
 }  
 
 
 class MySQL implements connectToMySQL{
-    public function getConnect(){
-        $db = new PDO('mysql:host=localhost;dbname=web','root','');
+
+    public static function getConnect(){
+        $db = new PDO('mysql:host=localhost;dbname=cityportal','root','');
         $db->exec('SET NAMES UTF8');
         return $db;
     }
+
 
 }
 

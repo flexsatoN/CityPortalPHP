@@ -1,6 +1,5 @@
 <?php
-    include_once("Models/m_CreateUser.php");
-    include_once("Core/co_function.php");
+    
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
       

@@ -15,9 +15,9 @@
   </script>
  </head>
 
-<a href="ControlInputPoint.php?cp=c_CreateNewUser">Зарегестрироваться</a><br>
-<!--<a href="ControlInputPoint.php?cp=c_CreateApplication">Создать заявку</a><br>-->
-<a href="ControlInputPoint.php?cp=с_LogIn">Войти</a>
+<!--<a href="ControlInputPoint.php?cp=c_CreateNewUser">Зарегестрироваться</a><br>
+<a href="ControlInputPoint.php?cp=с_LogIn">Войти</a>-->
+<a href="ControlInputPoint.php?cp=c_CreateApplication">Создать заявку</a><br>
 <p><?=$_GET['announce']?? ""?></p>
 
 <hr>
