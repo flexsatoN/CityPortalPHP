@@ -2,7 +2,7 @@
 
 
 interface articleRepository {
-    public static function load($dataArray):bool;
+    public static function load($dataArray,$file):bool;
     public function deleat();
     public function update();
     public function save();
@@ -11,10 +11,12 @@ interface articleRepository {
 
 class application implements articleRepository {
 
-    public static function load($dataArray):bool{
-
+    public static function load($dataArray,$file):bool{
+        $path = 'images/'.$_FILES['file']['name'];
+        copy($_FILES['file']['tmp_name'], $path);
+        $dataArray['path'] = $path;
         $db = MySQL::getConnect();
-        $sql = "INSERT INTO application (articleName,description,cat_id) VALUES (:articleName,:description,:cat_id)";
+        $sql = "INSERT INTO application (articleName,description,cat_id,photo) VALUES (:articleName,:description,:cat_id,:path)";
         $query = $db ->prepare($sql);
         $query->execute($dataArray);
         return true;

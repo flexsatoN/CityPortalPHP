@@ -11,7 +11,7 @@ include_once("Core/co_function.php");
 
 
 $db = new mainData();
-$array = $db->getFourArticle();
+$array = $db->getArticle();
 $controlPrefix = $_GET['cp'] ?? 'с_LogIn';//c_MainPage
 
 $path = "Controllers/$controlPrefix.php";

@@ -2,7 +2,7 @@
 
 function checkOnAllData($array){
     foreach ($array as $element){
-        if ($array["$element"]){
+        if (!isset($element)){
             return false;
         }         
     }

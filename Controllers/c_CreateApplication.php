@@ -3,19 +3,21 @@
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         
         $applicationDataArray = extractFromPostInMas($_POST, ['cat_id','articleName','description']);
-        //var_dump($applicationDataArray);
+        
+
+        //var_dump($_FILES);
         if (checkOnAllData($applicationDataArray)){
-            $confirm = application::load( $applicationDataArray);
+            $confirm = application::load( $applicationDataArray,$_FILES['file']);
             if ($confirm){
-                header("Location:ControlInputPoint.php?announce= Заявка принята");
+                header("Location:ControlInputPoint.php?announce= Заявка принята?cp=c_MainPage");
             }else{
-                header("Location: ControlInputPoint.php?error=$confirm&cp=c_CreateApplication");
+                header("Location: ControlInputPoint.php?error=$confirm?cp=c_CreateApplication");
                 exit();
             }
             //print_r($confirm);
             
         }else{
-           header("Location: ControlInputPoint.php?error=Заполните все поля&cp=c_CreateApplication");
+            include_once("c_CreateApplication.php");
            exit();
         }
     }else{       

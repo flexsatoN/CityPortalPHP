@@ -1,10 +1,10 @@
 <?php
 
 class mainData{
-    function getFourArticle():array{
+    function getArticle():array{
         $db = MySQL::getConnect();
     
-        $sql = "select a.articleName, a.description,a.timeStamp,cats.catName, a.application_id
+        $sql = "select a.articleName, a.description,a.timeStamp,cats.catName, a.application_id, a.photo
         FROM application a 
         INNER JOIN cats ON a.cat_id = cats.cats_id order by a.timeStamp desc";
         $query = $db ->prepare($sql);
