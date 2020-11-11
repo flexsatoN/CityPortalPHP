@@ -1,0 +1,24 @@
+ .accDelbutton{
+    background-color: white;
+    text-decoration: none;
+    border-radius: 2px;
+
+}
+.Delbutton{
+    background-color: white;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+
+.accDelbutton:hover{
+    transition: 400ms;
+    background-color: green;
+    color: white;
+}
+
+.Delbutton:hover{
+    transition: 400ms;
+    background-color: red;
+    color: white;
+}

@@ -21,6 +21,7 @@
             <button >Send</button>
             <p ></p>
         </form>
+        <a href="ControlInputPoint.php?cp=c_MainPage">Главная</a>
     </div>
     
  </body>

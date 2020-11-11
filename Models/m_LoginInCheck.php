@@ -10,7 +10,7 @@ class checkData{
     public function loginAndPasswordCheck($login,$password):bool
     {
        $Db = MySQL::getConnect();
-       $sql = "select password from users where login='$login'";
+       $sql = "select users_id,password,privilege from users where login='$login'";
        $query = $Db ->prepare($sql);
        $query->execute();
        $arr = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -20,6 +20,9 @@ class checkData{
        //sdf;
        
        if (password_verify($password,$arr[0]['password'])){
+            $_SESSION['id'] = $arr[0]['users_id'];
+            $_SESSION['login'] = $login;
+            $_SESSION['privilege']  = (int)$arr[0]['privilege'];
            return true;
        }else{
            return false;

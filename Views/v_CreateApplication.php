@@ -2,7 +2,6 @@
 <html>
  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <link rel="stylesheet" href="../style/loginpage.css">
   <title>Пример веб-страницы</title>
 
 
@@ -20,10 +19,10 @@
         
             <textarea  name="description" placeholder="Текст обращения" cols="30" rows="10" style="margin-top: 10px"></textarea><br>
             <input type="file" name="file" style="margin-top: 10px;">                        
-            <p><?=$_GET['error']?? ""?></p>
             <button type="submit" >Send</button>
             <br>
         </form>
+        <a href="ControlInputPoint.php?cp=c_AuthorPage">Главная</a>
     </div>
     
  </body>
