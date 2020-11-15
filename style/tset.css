@@ -1,24 +1,20 @@
  .accDelbutton{
-    background-color: white;
+    background: rgba(255, 255, 255, 0);
     text-decoration: none;
-    border-radius: 2px;
-
-}
-.Delbutton{
-    background-color: white;
-    text-decoration: none;
-    border-radius: 2px;
-}
+    letter-spacing: 1px;
+ }
 
 
 .accDelbutton:hover{
-    transition: 400ms;
-    background-color: green;
-    color: white;
+    color: #2997ff;
 }
 
-.Delbutton:hover{
-    transition: 400ms;
-    background-color: red;
-    color: white;
-}
+A {
+    color: rgba(255, 255, 255, 1); /* Цвет ссылок */
+   }
+   A:visited {
+    color:  rgba(255, 255, 255, 1); /* Цвет посещенных ссылок */
+   }
+   A:active {
+    color: rgba(255, 255, 255, 1); /* Цвет активных ссылок */
+   }

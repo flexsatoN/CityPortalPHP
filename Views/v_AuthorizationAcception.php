@@ -1,12 +1,27 @@
 
 <html>
  <head>
+  <link rel="stylesheet" type="text/css" href="Views/cascad.css">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Пример веб-страницы</title>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+  <header>
+      <div class="blur">
+        <h2>Приветствую тебя: <?=$_SESSION['login'] ?? ""?></h2>
+        <nav>
+          <a href="ControlInputPoint.php?cp=c_CreateApplication">Создать заявку</a>
+          <?if ($_SESSION['privilege']==1):?>
+            <a href="ControlInputPoint.php?cp=c_AdminPersonalCub">перейти в личный кабинет</a>
+          <?else:?>
+            <a href="ControlInputPoint.php?cp=c_UserPersonalCub">перейти в личный кабинет</a>
+          <?endif;?>
+          <?=$_GET['announce']?? ""?>
+        </nav>   
+    </div> 
+  </header>
 
   <script>
   $( function() {
@@ -16,42 +31,37 @@
     });
   } );
   </script>
+
  </head>
 
 <!--<a href="ControlInputPoint.php?cp=c_CreateNewUser">Зарегестрироваться</a><br>
 <a href="ControlInputPoint.php?cp=с_LogIn">Войти</a>-->
-<h1>Приветствую тебя: <?=$_SESSION['login'] ?? ""?></h1><br>
-<ul>
-  <li><a href="ControlInputPoint.php?cp=c_CreateApplication">Создать заявку</a><br></li>
-  <?if ($_SESSION['privilege']==1):?>
-    <li><a href="ControlInputPoint.php?cp=c_AdminPersonalCub">Перейти в личный кабинет</a></li>
-  <?else:?>
-    <li><a href="ControlInputPoint.php?cp=c_UserPersonalCub">Перейти в личный кабинет</a></li>
-  <?endif;?>
-  <?=$_GET['announce']?? ""?>
-</ul>
 
-<hr>
+<body style="min-height: 100vh;padding:0;margin:0;background-color:black">
 
- <body style=" margin: 0px;">                                                               
-	<div class="innerPase ">              
-    <div id="accordion">
-    <?foreach ($array as $arr):?>
-                <?if ($arr['status']=='1'):?>
-                <h3 style="margin-bottom:10px;position: sticky;top: 0px;min-height: 2em;border:1px solid black">Название: <?=$arr['articleName']?> | Дата: <?=$arr['timeStamp']?> | Категория: <?=$arr['catName']?> | Статья написана: <?=$arr['login']?> | Состояне: Новое  </h3>                  
-                <div>                              
-                    <div style="float:right;margin:auto;object-fit: cover;">
-                        <img src="<?=$arr['photo']?>" alt="">
-                    </div>
-                    <?=$arr['description']?><br>
-                    <hr>
-                </div>
-                <?endif;?>
+<div style="display: flex;flex-wrap: wrap;">  
+<?foreach ($array as $arr):?>
+   <?if ($arr['status']=='1'):?>
+     <div style="width: 48%;min-height:48%;margin:1%">     
+       <div style="width: 100%;height:100%;">       
+           <div class="parent" >    
+             <h2 style="padding-top: 2%;">Название: <?=$arr['articleName']?> | Дата: <?=$arr['timeStamp']?> | Категория: <?=$arr['catName']?> <br> Статья написана: <?=$arr['login']?> | Состояне: Новое</h3>            
+             <div class="blockWbg" style="background-image: url(<?=$arr['photo']?>);"></div>            
+             <p style="color:f5f5f7; margin: 1%; text-align:center"><?=$arr['description']?> </p>        
+           </div>                                 
+       </div>       
+     </div>
+   <?endif;?>  
+ <?endforeach;?>
+</div>
 
-            <?endforeach;?>
-    </div>
-  </div>
- </body>
+
+
+ <footer >
+   <p style="color: #FFFFFF;background: #1d1d1f;margin: 1.5% 0 0 0;padding:4;height:8em;text-align:center"> Информация будет заполнена позже</p>
+ </footer>    
+
+</body>
 
 </html>
 

@@ -10,9 +10,8 @@ include_once("Models/m_CreateUser.php");
 
 include_once("Core/co_function.php");
 
+
 session_start();
-
-
 
 $db = new mainData();
 $array = $db->getArticle();

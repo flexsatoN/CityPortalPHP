@@ -20,7 +20,10 @@ class createUserIntoMySQL implements createNewUser{
 
         $errInfo = $query->errorInfo();
         if($errInfo[0] !== PDO::ERR_NONE){
-           return $errInfo[2];
+           // var_dump($errInfo) ;
+           // dd();
+
+           return $errInfo;
            exit();
         }
     }

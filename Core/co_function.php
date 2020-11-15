@@ -2,11 +2,12 @@
 
 function checkOnAllData($array){
     foreach ($array as $element){
-        if (!isset($element)){
+        if ($element == ""){
             return false;
         }         
     }
     return true;
+    
 }
 
 function extractFromPostInMas($target,$fields):array{
@@ -15,4 +16,9 @@ function extractFromPostInMas($target,$fields):array{
         $res[$field] = trim($target[$field]);
     }
     return $res;
+}
+
+function parlCheck($firstString,$secondString):bool{
+
+    return $firstString!=$secondString ? true:false;
 }
