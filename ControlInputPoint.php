@@ -1,3 +1,5 @@
+
+
 <?php
 include_once("Models/m_ConnectToDb.php");
 include_once("Models/dataToMainPage.php");
@@ -36,6 +38,7 @@ if (!isset($_SESSION['auth'])){
     $path = "Controllers/$controlPrefix.php";
     include($path);
 }
+?>
 
 
 
