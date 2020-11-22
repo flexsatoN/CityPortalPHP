@@ -56,10 +56,10 @@
 </div>
 
 
-
  <footer >
-   <p style="color: #FFFFFF;background: #1d1d1f;margin: 1.5% 0 0 0;padding:4;height:8em;text-align:center"> Информация будет заполнена позже</p>
- </footer>    
+   <p style="color: #FFFFFF;background: #1d1d1f;margin: 1.5% 0 0 0;height:8em;text-align:center"> Информация будет заполнена позже</p>
+ </footer> 
+   
 
 </body>
 
